@@ -9,20 +9,20 @@
       <meta name="description" content="{{description}}"/>
     {% endif %}
     {% block head %}{% endblock %}
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css"/>
     {% if prism == true %}
       <link rel="stylesheet" type="text/css" href="/static/css/prism-tomorrow.css"/>
     {% endif %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/static/js/theme.js"></script>
   </head>
-  <body class="flex flex-col h-screen justify-between">
+  <body>
     {% include "./partials/navbar.html" %}
-    <main class="flex-grow">
+    <main>
       {{ content | safe }}
     </main>
     {% include "./partials/footer.html" %}
-
-    <script src="/static/js/alpine.js"></script>
 
     {% if path == "home" %}
       <!-- Netlify Identity Widget -->
