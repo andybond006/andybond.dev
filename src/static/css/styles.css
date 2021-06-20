@@ -1,7 +1,8 @@
 /* CSS Variables */
 
 :root {
-  --font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
   --color-text: rgba(var(--color-black), 0.7);
   --color-background: rgb(var(--color-white));
@@ -15,6 +16,7 @@
   --color-title: var(--color-primary);
   --color-highlight: rgba(var(--color-black), 0.125);
   --font-weight-medium: 500;
+  --color-card: rgb(var(--color-white));
 }
 
 .dark {
@@ -23,11 +25,14 @@
   --color-title: var(--color-primary-lighter);
   --color-highlight: rgba(var(--color-white), 0.125);
   --font-weight-medium: 400;
+  --color-card: hsl(212, 49%, 16%);
 }
 
 /* Layout */
 
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -49,7 +54,7 @@
 }
 
 ::selection {
-  background-color: var(--color-primary);
+  background-color: var(--color-title);
   color: white;
 }
 
@@ -82,6 +87,10 @@ body {
 #navbar {
   grid-area: "header";
   position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 3em;
 }
 
 #navbar nav {
@@ -145,18 +154,13 @@ body {
 }
 
 #navbar nav a {
-  text-decoration: underline;
-  transition: text-decoration-color 250ms ease-in-out;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 #navbar nav span {
   margin-left: 0.5em;
   margin-right: 0.5em;
-}
-
-#navbar nav a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--color-accent);
 }
 
 /* Main */
@@ -289,6 +293,16 @@ main {
 
 .mb-1 {
   margin-bottom: 1em;
+}
+
+/* Card */
+
+.card {
+  padding: 1em;
+  background-color: var(--color-card);
+  border-radius: 10px;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
 }
 
 /* Syntax Highlighting*/
