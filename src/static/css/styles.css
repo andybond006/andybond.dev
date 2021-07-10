@@ -4,28 +4,38 @@
   --font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-  --color-text: rgba(var(--color-black), 0.7);
-  --color-background: rgb(var(--color-white));
   --color-white: 255, 255, 255;
   --color-black: 0, 0, 0;
 
-  --color-primary: #512da8;
+  --color-primary-darker: rgb(81, 45, 168);
+  --color-primary: rgb(103, 58, 183);
   --color-primary-lighter: rgb(162, 128, 255);
+
   --color-accent: rgb(0, 150, 136);
+  --color-accent-darker: rgb(0, 121, 107);
+
+  --color-text: rgba(var(--color-black), 0.7);
+  --color-background: rgb(var(--color-white));
+  --font-weight-medium: 500;
 
   --color-title: var(--color-primary);
   --color-highlight: rgba(var(--color-black), 0.125);
-  --font-weight-medium: 500;
   --color-card: rgb(var(--color-white));
+  --color-link: var(--color-primary);
+
+  --default-transition: background-color 250ms ease-in-out,
+    color 250ms ease-in-out;
 }
 
 .dark {
   --color-text: rgba(var(--color-white), 1);
   --color-background: rgb(13, 27, 42);
+  --font-weight-medium: 400;
+
   --color-title: var(--color-primary-lighter);
   --color-highlight: rgba(var(--color-white), 0.125);
-  --font-weight-medium: 400;
-  --color-card: hsl(212, 49%, 16%);
+  --color-card: rgb(21, 39, 61);
+  --color-link: var(--color-primary-lighter);
 }
 
 /* Layout */
@@ -69,7 +79,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-weight: var(--font-weight-medium);
-  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  transition: var(--default-transition);
 }
 
 body {
@@ -82,6 +92,12 @@ body {
     "footer";
 }
 
+/* Links */
+
+a {
+  color: var(--color-link);
+}
+
 /* Navbar */
 
 #navbar {
@@ -90,7 +106,7 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
 }
 
 #navbar nav {
@@ -180,13 +196,6 @@ main {
 
 #footer a {
   color: inherit;
-  text-decoration: underline;
-  transition: text-decoration-color 250ms ease-in-out;
-}
-
-#footer a:hover {
-  text-decoration: underline;
-  text-decoration-color: var(--color-accent);
 }
 
 /* Utilities */
@@ -229,6 +238,14 @@ main {
 
 .relative {
   position: relative;
+}
+
+.gap-1 {
+  gap: 1em;
+}
+
+.gap-2 {
+  gap: 2em;
 }
 
 /* Padding */
@@ -298,11 +315,13 @@ main {
 /* Card */
 
 .card {
-  padding: 1em;
+  color: var(--color-text);
+  padding: 2em;
   background-color: var(--color-card);
   border-radius: 10px;
   box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14),
     0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+  transition: var(--default-transition);
 }
 
 /* Syntax Highlighting*/
